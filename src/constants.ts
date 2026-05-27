@@ -17,6 +17,8 @@ export const ALLOWED_ORIGINS = IS_PROD_BUILD
         /^https:\/\/app\.httptoolkit\.tech$/
     ]
     : [
+        // CUSTOM: bundled Electron UI (app://) when running server from source
+        /^app:\/\/httptoolkit$/,
         // Dev builds can use the main site, or local sites, even if those
         // use HTTP. Note that HTTP here could technically open you to the risk
         // above, but it'd require a DNS MitM too (to stop local.httptoolkit.tech
