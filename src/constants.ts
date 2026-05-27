@@ -8,6 +8,8 @@ export const APP_ROOT = path.join(__dirname, '..');
 
 export const ALLOWED_ORIGINS = IS_PROD_BUILD
     ? [
+        // CUSTOM: bundled Electron UI served via custom app:// protocol
+        /^app:\/\/httptoolkit$/,
         // Prod builds only allow HTTPS app.httptoolkit.tech usage. This
         // ensures that no other sites/apps can communicate with your server
         // whilst you have the app open. If they could (requires an HTTP mitm),
